@@ -1,6 +1,7 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
@@ -25,41 +26,50 @@
     </div>
   </nav>
   
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
+    <div class="card border-0" style="width: 90%;margin: auto; margin-top:3%;">
+      <div class="banner text-center py-5" name="about-header" style="background: linear-gradient(135deg, darkturquoise 0%, rgb(97, 64, 128) 100%); color: white; border-radius: 10px;">
+       <h1 class="mb-3" style="font-weight: 600;">About Us</h1>
+       <p class="lead mb-0" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.</p>
       </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
+      <div class="container">
+        <div class="row justify-content-center g-4 mt-4 mb-5">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+              <img class="card-img-top" src="/static/sarah.jpg" alt="Sarah Mitchell" style="border-bottom: 3px solid darkturquoise; height: 250px; object-fit: cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-white text-center py-2 mb-3" style="background-color: rgb(97, 64, 128); border-radius: 5px;">Sarah Mitchell</h5>
+                <h6 class="text-muted mb-3">General Manager</h6>
+                <p class="card-text flex-grow-1">Sarah has over 15 years of experience in automotive sales and management. She's passionate about delivering exceptional customer service and building lasting relationships.</p>
+                <p class="mb-0 mt-2"><small><i class="text-muted">sarah.mitchell@bestcars.com</i></small></p>
+              </div>
+            </div>
+          </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+              <img class="card-img-top" src="/static/michael.jpg" alt="Michael Rodriguez" style="border-bottom: 3px solid darkturquoise; height: 250px; object-fit: cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-white text-center py-2 mb-3" style="background-color: rgb(97, 64, 128); border-radius: 5px;">Michael Rodriguez</h5>
+                <h6 class="text-muted mb-3">Sales Director</h6>
+                <p class="card-text flex-grow-1">Michael leads our sales team with expertise in both domestic and imported vehicles. His commitment to finding the perfect car for each customer has earned him numerous awards.</p>
+                <p class="mb-0 mt-2"><small><i class="text-muted">michael.rodriguez@bestcars.com</i></small></p>
+              </div>
+            </div>
+          </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+              <img class="card-img-top" src="/static/jennefir.png" alt="Jennifer Chen" style="border-bottom: 3px solid darkturquoise; height: 250px; object-fit: cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-white text-center py-2 mb-3" style="background-color: rgb(97, 64, 128); border-radius: 5px;">Jennifer Chen</h5>
+                <h6 class="text-muted mb-3">Customer Relations Manager</h6>
+                <p class="card-text flex-grow-1">Jennifer ensures every customer has a smooth and enjoyable experience. With her background in hospitality, she brings warmth and professionalism to our dealership.</p>
+                <p class="mb-0 mt-2"><small><i class="text-muted">jennifer.chen@bestcars.com</i></small></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     </div>
     
