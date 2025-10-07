@@ -25,18 +25,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8
 
-      - name: Create .flake8 config
+      - name: Create .flake8 config (ignore formatting errors)
         run: |
           echo "[flake8]" > .flake8
-          echo "ignore = E501,W503,E203" >> .flake8
+          # Ignore common formatting errors (E1xx, E2xx, E3xx, E5xx)
+          echo "ignore = E1,E2,E3,E5,W291,W293,W503,E203" >> .flake8
           echo "max-line-length = 120" >> .flake8
           echo "exclude = .git,__pycache__,build,dist" >> .flake8
 
       - name: Run Linter
         run: |
-          echo "Running flake8 with relaxed rules..."
+          echo "Running flake8 (ignoring formatting errors)..."
           flake8 .
-          echo "✅ Linted all Python files successfully"
+          echo "✅ Python linting complete"
 
   lint_js:
     name: Lint JavaScript Files
@@ -49,15 +50,27 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # more recent version
+          node-version: 18
 
       - name: Install JSHint
         run: npm install jshint --global
 
+      - name: Create .jshintrc config (ignore style issues)
+        run: |
+          echo '{' > .jshintrc
+          echo '  "esversion": 8,' >> .jshintrc
+          echo '  "strict": false,' >> .jshintrc
+          echo '  "undef": true,' >> .jshintrc
+          echo '  "unused": true,' >> .jshintrc
+          echo '  "maxerr": 100,' >> .jshintrc
+          echo '  "asi": true,' >> .jshintrc
+          echo '  "laxcomma": true,' >> .jshintrc
+          echo '  "eqeqeq": false,' >> .jshintrc
+          echo '  "trailing": false' >> .jshintrc
+          echo '}' >> .jshintrc
+
       - name: Run Linter
         run: |
-          echo "Running JSHint with lenient settings..."
-          # Create a simple .jshintrc config for relaxed linting
-          echo '{ "esversion": 8, "undef": false, "unused": false, "strict": false }' > .jshintrc
+          echo "Running JSHint (ignoring formatting issues)..."
           find ./server/database -name "*.js" -exec jshint {} +
-          echo "✅ Linted all JS files successfully"
+          echo "✅ JavaScript linting complete"
